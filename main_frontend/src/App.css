@@ -4,20 +4,20 @@
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --text-primary: #282c34;
-  --text-secondary: #61dafb;
+  --text-secondary: #0d6efd;
   --border-color: #e9ecef;
-  --button-bg: #007bff;
+  --button-bg: #0d6efd;
   --button-text: #ffffff;
 }
 
 [data-theme="dark"] {
   /* Dark theme colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #282c34;
+  --bg-primary: #121212;
+  --bg-secondary: #1f1f1f;
   --text-primary: #ffffff;
-  --text-secondary: #61dafb;
-  --border-color: #404040;
-  --button-bg: #0056b3;
+  --text-secondary: #6ab0ff;
+  --border-color: #2a2a2a;
+  --button-bg: #0a58ca;
   --button-text: #ffffff;
 }
 
@@ -29,33 +29,38 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .spin {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
 .App-header {
   background-color: var(--bg-secondary);
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  padding-top: 72px;
+  font-size: 16px;
   color: var(--text-primary);
   transition: background-color 0.3s ease;
   position: relative;
 }
 
+a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .App-link {
   color: var(--text-secondary);
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 .theme-toggle {
@@ -77,13 +82,31 @@
 .theme-toggle:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .theme-toggle:active {
   transform: translateY(0);
 }
 
+/* Basic content spacing */
+section {
+  text-align: left;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0 auto 24px;
+  max-width: 960px;
+}
+
+/* Footer pinned at bottom space */
+footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Keyframes */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
